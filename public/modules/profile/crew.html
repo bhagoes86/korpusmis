@@ -1,0 +1,139 @@
+	<div ncy-breadcrumb></div>
+	<div class="crew-container">
+		<div class="page-title-container col-md-12">	
+			<h1 class="page-title">
+				<span class="glyphicon glyphicon-user"></span>
+				&nbsp;{{crew.name}}
+			</h1>
+		</div>
+		<div class="crew col-md-12">
+			<div class="big-pict-container col-md-4">
+				<img class="pict-crew" ng-src="{{crew.profpicturl}}" />
+			</div>
+			<div class="crew-detail col-md-8 col-sm-height">
+				<div class="username col-md-6 col-sm-height">
+					<table>
+						<tbody>
+							<tr>
+								<td>Name</td>
+								<td>&nbsp;&nbsp;&nbsp;:</td>
+								<td>&nbsp;&nbsp;&nbsp;{{crew.name}}</td>
+							</tr>
+							<tr>
+								<td>Profession</td>
+								<td>&nbsp;&nbsp;&nbsp;:</td>
+								<td>&nbsp;&nbsp;&nbsp;{{crew.profession}}</td>
+							</tr>
+							<tr>
+								<td>Birth Date</td>
+								<td>&nbsp;&nbsp;&nbsp;:</td>
+								<td>&nbsp;&nbsp;&nbsp;{{crew.birthDate}}</td>
+							</tr>
+							<tr>
+								<td>Gender</td>
+								<td>&nbsp;&nbsp;&nbsp;:</td>
+								<td>&nbsp;&nbsp;&nbsp;{{crew.gender}}</td>
+							</tr>
+							<tr>
+								<td>NRP</td>
+								<td>&nbsp;&nbsp;&nbsp;:</td>
+								<td>&nbsp;&nbsp;&nbsp;{{crew.nrp}}</td>
+							</tr>
+							<tr>
+								<td>Faculty</td>
+								<td>&nbsp;&nbsp;&nbsp;:</td>
+								<td>&nbsp;&nbsp;&nbsp;{{crew.faculty}}</td>
+							</tr>
+							<tr>
+								<td>Department</td>
+								<td>&nbsp;&nbsp;&nbsp;:</td>
+								<td>&nbsp;&nbsp;&nbsp;{{crew.department}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="contact col-md-6 col-sm-height">
+					<table>
+						<tr>
+							<td>Phone</td>
+							<td>&nbsp;&nbsp;&nbsp;:</td>
+							<td>&nbsp;&nbsp;&nbsp;{{crew.contact}}</td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td>&nbsp;&nbsp;&nbsp;:</td>
+							<td>&nbsp;&nbsp;&nbsp;{{crew.email}}</td>
+						</tr>
+						<tr>
+							<td>Facebook</td>
+							<td>&nbsp;&nbsp;&nbsp;:</td>
+							<td>&nbsp;&nbsp;&nbsp;{{crew.facebook}}</td>
+						</tr>
+						<tr>
+							<td>Twitter</td>
+							<td>&nbsp;&nbsp;&nbsp;:</td>
+							<td>&nbsp;&nbsp;&nbsp;{{crew.twitter}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="chart-container col-md-12" style="padding-right: 0px !important" ng-class="{ hidden : chartRestricted }">
+			<div class="chart" style="margin-bottom: 10px">
+				<ul class="nav nav-tabs">
+					<li class="absence-tabs"><a ng-click="tabChartSwitcher(1)">Presence</a></li>
+					<li class="progress-tabs"><a ng-click="tabChartSwitcher(2)">Learning Progress</a></li>
+				</ul>
+				<span us-spinner="{color: '#FFF'}" spinner-key="spinner-2" spinner-start-active="1"></span>
+				<div class="tab-content" ui-view>
+					<highchart config="chartConfig" ng-class="{ hidden : chartHidden}"></highchart>
+				</div>
+			</div>
+		</div>
+		<div class="award col-md-12">
+			<h1>Award</h1>
+			<div class="list-award">
+				<div class="item-list-award row" ng-repeat="award in crewAward">
+					<div class="title col-md-10 col-xs-9">
+						{{award.title}}
+					</div>
+					<div class="date col-md-2 col-xs-3">
+						{{award.date | myDateFormat}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="portfolio col-md-12">
+			<h1>Portfolio</h1>
+			<div class="list-award">
+				<div class="item-list-award row">
+					<div class="col-md-6 col-xs-5">
+						Title
+					</div>
+					<div class="col-md-2 col-xs-2">
+						Type
+					</div>
+					<div class="col-md-2 col-xs-2">
+						Publish on
+					</div>
+					<div class="col-md-2 col-xs-3">
+						Date
+					</div>
+				</div>
+				<div class="item-list-award row" ng-repeat="portfolio in crewPortfolios">
+					<div class="title col-md-6 col-xs-5">
+						{{portfolio.title}}
+					</div>
+					<div class="type col-md-2 col-xs-2">
+						{{portfolio.type}}
+					</div>
+					<div class="publish_on col-md-2 col-xs-2">
+						{{portfolio.publish_on}}
+					</div>
+					<div class="date col-md-2 col-xs-3">
+						{{portfolio.date | myDateFormat}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

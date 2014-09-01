@@ -1,0 +1,56 @@
+<h1 class="page-title col-md-12">
+	<span class="glyphicon glyphicon-check"></span>
+	&nbsp;Scoring Record
+</h1>
+<div ncy-breadcrumb></div>
+<toaster-container></toaster-container>
+<div class="event-record-box form-box col-md-12">
+	<div class="well">
+		<div class="title-box">
+			<h1>Create New Scoring Record</h1>
+		</div>
+		<div class="new-scoring-form form-container row">
+			<form ng-submit="addNewScoreRecord()">
+				<div class="column-one col-md-6">
+					<div>
+						<label for="scoring-createdBy">Created By</label>
+						<mac-autocomplete
+						mac-autocomplete-source="owner"
+						mac-autocomplete-label="text"
+						mac-autocomplete-on-select="setOwner(selected)"
+						ng-model="scoring.createdBy"
+						>
+						<span> {{item.label}} </span>
+						</mac-autocomplete>
+					</div>
+					<div>
+						<label for="scoring-title">Title</label>
+						<input type="text" name="scoring-title" ng-model="scoring.title">
+					</div>
+					<div>
+						<label for="scoring-type">Type</label>
+						<!-- <input type="text" name="scoring-type" ng-model="scoring.type"> -->
+						<select ng-model="scoring.type" ng-init="scoring.type = scoring.type || typeOptions[0].value" ng-options="option.value as option.name for option in typeOptions">
+						</select>
+					</div>
+				</div>
+				<div class="column-one col-md-6">
+					<div>
+						<label for="scoring-publishOn">Publish On</label>
+						<select ng-model="scoring.publishOn" ng-init="scoring.publishOn = scoring.publishOn || publishOnOptions[0].value" ng-options="option.value as option.name for option in publishOnOptions">
+						</select>
+					</div>
+					<div>
+						<label for="scoring-date">Date</label>
+						<input type="date" name="scoring-date" ng-model="scoring.date">
+					</div>
+					<div>
+						<label for="scoring-score">Score</label>
+						<input type="number" name="scoring-score" ng-model="scoring.score" placeholder="max score = 10, min score = 10" min="10" max="100">
+					</div>
+					<button type="submit">Post</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

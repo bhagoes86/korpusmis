@@ -1,0 +1,76 @@
+<h1 class="page-title col-md-12">
+  <span class="glyphicon glyphicon-stats"></span>
+  &nbsp;Dashboard
+</h1>
+<div class="summary-statistics">
+  <div class="jobs item-statistics col-md-4">
+    <div class="well">
+     <header class="title-box">
+      <h1>Overview</h1>
+    </header>
+    <section class="overview-table">
+      <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Jobs Done</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">20</p>
+      </div>
+      <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Remaining Task</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">7</p>
+      </div>
+    </section>
+    <div class="row">
+      <p class="col-md-12 overview-message">Please don't forget to check latest report from Karen every week</p>
+    </div>
+  </div>
+</div>
+<div class="task item-statistics col-md-4">
+  <div class="well">
+   <div class="title-box">
+    <h1>Upcoming Deadline</h1>
+  </div>
+  <div class="task-table">
+    <div class="row">
+      <p class="due-date col-xs-4 col-sm-4 col-md-12">June, 20th 2014</p>
+      <p class="col-xs-8 col-sm-8 col-md-12">Interview Bill Gates in Microsoft</p>
+    </div>
+    <div class="row">
+      <p class="due-date col-xs-4 col-sm-4 col-md-12">June, 20th 2014</p>
+      <p class="col-xs-8 col-sm-8 col-md-12">Interview Steve Jobs under his grave</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="events item-statistics col-md-4">
+  <div class="well">
+   <div class="title-box">
+    <h1>Events</h1>
+  </div>
+  <div class="events-table">
+    <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Upcoming</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">20</p>
+    </div>
+    <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Attending</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">10</p>
+    </div>
+  </div>
+  <p class="nearest-events">Party rock anthem is in the house on Sunday, 12 June 2014</p>
+</div>
+</div>
+</div>
+</div>
+<div class="chart-container col-md-6">
+  <div class="chart" style="margin-bottom: 10px" ng-controller="statisticsController">
+    <ul class="nav nav-tabs">
+      <li class="absence-tabs" ng-class="{ active: isTabActive('/statistics/absence')}"><a ui-sref=".absence">Absence</a></li>
+      <li class="progress-tabs" ng-class="{ active: isTabActive('/statistics/progress')}"><a ui-sref=".progress">Learning Progress</a></li>
+    </ul>
+    <div class="tab-content" ui-view>
+
+    </div>
+  </div>
+</div>
+<div class="i-dont-know col-md-6">
+  <p class="well">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, excepturi, corporis, quisquam, tempora laboriosam dolorem accusamus ea consequatur dolore aut impedit aspernatur odit? Numquam totam facilis vel temporibus laudantium veritatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, ratione, soluta delectus in tenetur culpa magnam necessitatibus. Suscipit, vero, provident, alias reprehenderit deserunt odit minima explicabo ipsam expedita quae doloremque!</p>
+</div>

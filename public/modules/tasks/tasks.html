@@ -1,0 +1,89 @@
+<h1 class="page-title col-md-12">
+	<span class="glyphicon glyphicon-tasks"></span>
+	&nbsp;Tasks
+</h1>
+<div ncy-breadcrumb></div>
+<toaster-container></toaster-container>
+<div class="new-task-box form-box col-md-12" ng-class="{hidden: isRestricted('taskForm')}">
+	<div class="well">
+		<div class="title-box">
+			<h1>Create New Task</h1>
+		</div>
+		<div class="new-task-form form-container row">
+			<form ng-submit="addNewTask()">
+				<div class="column-one col-md-6">
+					<div>
+						<label for="task-title">Task</label>
+						<input type="text" name="task-title" ng-model="newTask.title">
+					</div>
+					<div>
+						<label for="task-recipient">Recipient</label>
+						<!-- <input type="text" name="task-recipient" placeholder="type task recipient here"> -->
+						<br />
+						<mac-tag-autocomplete
+						mac-tag-autocomplete-source="recipients"
+						mac-tag-autocomplete-query="q"
+						mac-tag-autocomplete-selected="sendTo"
+						mac-tag-autocomplete-value="id"
+						mac-tag-autocomplete-label="text"
+						mac-tag-autocomplete-model = "send"
+						>
+						</mac-tag-autocomplete>
+					</div>
+					<div>
+						<label for="task-date">Date</label>
+						<input type="date" name="task-date" ng-model="newTask.date">
+					</div>
+					<div>
+						<label for="task-time">Time</label>
+						<input type="time" name="task-time" ng-model="newTask.time">
+					</div>
+				</div>
+				<div class="column-two col-md-6">
+					<div>
+						<label for="task-description">Description</label>
+						<textarea name="task-description" ng-model="newTask.desc">
+
+						</textarea>
+					</div>
+					<button type="submit">Create</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- <button popover="I appeared on mouse enter!" popover-trigger="mouseenter" class="btn btn-default">Mouseenter</button> -->
+<div class="tasks col-md-12 table-container">
+	<div class="list-task list-container">
+		<div class="item-list-task-head row list-head-container">
+			<div class="title-head col-md-4 col-xs-4">
+				Tasks
+			</div>
+			<div class="from-head col-md-4 col-xs-2">
+				From
+			</div>
+			<div class="date-head col-md-2 col-xs-4">
+				Deadline
+			</div>
+			<div class="done-head col-md-2 col-xs-2 last-head-title">
+				Done
+			</div>
+		</div>
+		<div class="item-list-container list-item-container">
+			<div class="item-list-task row list-item" ng-repeat="task in tasks">
+				<div class="title col-md-4 col-xs-4">
+					{{task.task}}
+				</div>
+				<div class="from col-md-4 col-xs-2">
+					{{task.from}}
+				</div>
+				<div class="date col-md-2 col-xs-4">
+					{{task.deadline | myDateFormat}}
+				</div>
+				<div class="done col-md-2 col-xs-2">
+					<input type="checkbox">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

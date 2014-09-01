@@ -1,0 +1,78 @@
+<h1 class="page-title col-md-12">
+  <span class="glyphicon glyphicon-stats"></span>
+  &nbsp;Dashboard
+</h1>
+<div ncy-breadcrumb></div>
+<div class="summary-statistics row">
+  <div class="jobs item-statistics col-md-4">
+    <div class="well">
+     <header class="title-box">
+      <h1>Overview</h1>
+    </header>
+    <section class="overview-table">
+      <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Jobs Done</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">{{user.jobsDone}}</p>
+      </div>
+      <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Jobs Remain</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">{{user.jobsRemain}}</p>
+      </div>
+    </section>
+    <div class="row">
+      <p class="col-md-12 overview-message">Please don't forget to check latest report from Karen every week</p>
+    </div>
+  </div>
+</div>
+<div class="task item-statistics col-md-4">
+  <div class="well">
+   <div class="title-box">
+    <h1>Upcoming Deadline</h1>
+  </div>
+  <div class="task-table">
+    <div class="row" ng-repeat="item in tasks | limitTo:2">
+      <p class="due-date col-xs-4 col-sm-4 col-md-12">{{item.deadline}}</p>
+      <p class="col-xs-8 col-sm-8 col-md-12">{{item.task}}</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="events item-statistics col-md-4">
+  <div class="well">
+   <div class="title-box">
+    <h1>Events</h1>
+  </div>
+  <div class="events-table">
+    <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Upcoming</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">20</p>
+    </div>
+    <div class="row">
+      <p class="col-xs-6 col-sm-6 col-md-6">Attending</p>
+      <p class="col-xs-6 col-sm-6 col-md-6" style="text-align:right;">10</p>
+    </div>
+  </div>
+  <p class="nearest-events">Party rock anthem is in the house on Sunday, 12 June 2014</p>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="chart-container col-md-6">
+  <div class="chart" style="margin-bottom: 10px" ng-controller="statisticsController">
+    <ul class="nav nav-tabs">
+      <li class="absence-tabs" ng-class="{ active: isTabActive('/statistics/absence')}"><a ui-sref=".absence">Presence</a></li>
+      <li class="progress-tabs" ng-class="{ active: isTabActive('/statistics/progress')}"><a ui-sref=".progress">Learning Progress</a></li>
+    </ul>
+    <span us-spinner="{color: '#FFF'}" spinner-key="spinner-1" spinner-start-active="1"></span>
+    <div class="tab-content" ui-view>
+    </div>
+  </div>
+</div>
+<div class="twitter-container col-md-6">
+  <div class="title-box twitter-title">
+    <h1>Latest News</h1>
+  </div>
+  <div twitter-timeline="472771572797693952" auto-resize="true" css-url="css/twitter-style.css" data-tweet-limit="5"  data-chrome="nofooter">Loading tweets...</div>
+</div>
+</div>

@@ -1,0 +1,54 @@
+<header class="header-top">
+	<div class="header-content">
+		<h1 class="logo"><a href="#" class="text-hide">Koran Kampus</a></h1>
+		<a id="menu-side-toggle" class="btn btn-default" ng-click="collapseTrigger()">
+		</a>
+		<div id="login" class="login" ng-click="custom=!custom">
+			<div class="pict-container">
+			<img id="prof-pict" src="{{user.profpicturl}}">
+			</div>
+			<p class="username"><a>{{user.name}}</a></p>
+		</div>
+		<div class='search-bar'>
+		<mac-autocomplete
+		mac-autocomplete-source="userList"
+		mac-autocomplete-label="name"
+		mac-autocomplete-on-select="setUser(selected)"
+		ng-model="userSelected"
+		>
+		<span> {{item.label}} </span>
+<!-- 		<div class="autocomplete-img-container">
+		<img class="autocomplete-img" src="{{item.profpicturl}}">
+		</div> -->
+		</mac-autocomplete>
+		<button class="search-btn" ng-click="search()">
+			<span class="glyphicon glyphicon-search"></span>
+		</button>
+		</div>
+		<div class="toggle-menu" ng-hide="custom">
+			<ul class="list-toggle-menu">
+				<li><a ui-sref="home.editProfile"><span class="glyphicon glyphicon-edit"></span>Edit Profile</a></li>
+				<li ng-click="logout()"><a><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="wrapper">
+	<nav class="menu-side" ng-class="{ showMenu: collapseMenu}">
+		<ul class="list-menu-side">
+			<li class="item-menu" ng-class="{ true: 'active' }[isActive('/app/statistics/absence')==true || isActive('/app/statistics/progress')==true]"><a class="menu-link-statistics" ui-sref="home.statistics.absence"><span class="glyphicon glyphicon-stats"></span>&nbsp;&nbsp;&nbsp;Dashboard</a></li>
+			<li class="item-menu" ng-class="{ active: isActive('/app/profile')}"><a class="menu-link-profile" ui-sref="home.profile"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Profile</a></li>
+			<li class="item-menu" ng-class="{ active: isActive('/app/tasks')}"><a class="menu-link-tasks" ui-sref="home.tasks"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;&nbsp;Tasks</a></li>
+			<li class="item-menu" ng-class="{ active: isActive('/app/events')}"><a class="menu-link-events" ui-sref="home.events"><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;&nbsp;Events</a></li>
+			<li class="item-menu" ng-class="{ active: isActive('/app/absenceRecord'), hidden: isRestricted('absenceRecord')}"><a class="menu-link-events" ui-sref="home.absenceRecord"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;&nbsp;Presence record</a></li>
+			<li class="item-menu" ng-class="{ active: isActive('/app/scoringRecord'), hidden: isRestricted('scoringRecord')}"><a class="menu-link-events" ui-sref="home.scoringRecord"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Score record</a></li>
+			<li class="item-menu" ng-class="{ active: isActive('/app/addCrew'), hidden: isRestricted('addCrew')}"><a class="menu-link-events" ui-sref="home.addCrew"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp;Add Crew</a></li>
+		</ul>
+	</nav>
+	<!-- Keep all page content within the page-content inset div! -->
+	<div class="page-content inset">
+		<div class="row" ui-view>
+			<!-- content goes here -->
+		</div>
+	</div>
+</div>

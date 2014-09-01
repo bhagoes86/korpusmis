@@ -1,0 +1,71 @@
+<h1 class="page-title col-md-12">
+	<span class="glyphicon glyphicon-plus"></span>
+	&nbsp;Add Crew
+</h1>
+<div ncy-breadcrumb></div>
+<div class="addCrew-record-box form-box col-md-12">
+	<div class="well">
+		<div class="title-box">
+			<h1>Add New Crew</h1>
+		</div>
+		<div class="addCrew-form form-container row">
+			<form>
+				<div class="column-one col-md-6">
+					<div>
+						<label for="profile-name">Name</label>
+						<input type="text" name="profile-name">
+					</div>
+					<div>
+						<label for="profile-profession">Profession</label>
+						<!-- <input type="text" name="profile-profession"> -->
+						<select name="profession" ng-model="newCrew.profession" ng-options="pr.name for pr in profession">
+						</select>
+					</div>
+					<div>
+						<label for="profile-phone">Phone</label>
+						<div class="input-group">
+							<span class="phone-prefix">+62</span>
+							<input type="text" name="profile-phone">
+						</div>
+					</div>
+					<div>
+						<label for="profile-email">Email</label>
+						<input type="text" name="profile-email" placeholder='something@mail.com'>
+					</div>
+					<div>
+						<label for="profile-twitter">Twitter</label>
+						<div class="input-group">
+							<span class='twitter-prefix'>@</span>							
+							<input type="text" name="profile-twitter">
+						</div>
+					</div>
+					<div>
+						<label for="profile-facebook">Facebook</label>
+						<input type="text" name="profile-facebook">
+					</div>
+					<div>
+						<label for="profile-level">Level</label>
+						<!-- <input type="text" name="profile-facebook"> -->
+						<select name="profession" ng-model="newCrew.level" ng-options="lvl.desc for lvl in level">
+						</select>
+					</div>
+				</div>
+				<div class="column-two col-md-6">
+					<!-- <div>
+						<label for="profile-oldPassword">Old Password</label>
+						<input type="password" name="profile-oldPassword">
+					</div> -->
+					<div>
+						<label for="profile-newPassword">Password</label>
+						<input type="password" name="profile-newPassword">
+					</div>
+					<div>
+						<label for="profile-repeatPassword">Repeat Password</label>
+						<input type="password" name="profile-repeatPassword">
+					</div>
+					<button type="submit">Add</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

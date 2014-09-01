@@ -1,0 +1,34 @@
+/***********************************************************************************************/
+/* 	TODO
+	Author : Rahmanda Wibowo
+	Purpose : personal daily log and progress
+ */
+/***********************************************************************************************/
+
+Problems :
+
+1. [Portofolios] should have permalink into file archive / web
+2. [Task] should have feature that check and record finished list instantly.
+3. Datepicker, timepicker and input number not really comfortable to use in multiple device.
+4. No form validation (urgent)
+5. [Event] haven't implement comfirmation system to database (urgent).
+6. [Presence Record] haven't be able to save record to database (urgent).
+7. [Presence Record] haven't be able to tag more than 1 person.
+8. [Score Record] should have input link.
+9. [Add Crew] not yet working!! (urgent).
+10 [Add Crew] should implement avatar upload.
+11. [Edit profile] should add edit/reupload avatar.
+12. [Login] should implement cookies.
+
+Sunday, 31 August 2014 20:06
+Working on (9)
+- db.user add column is_active for identifying whether member is active or not.
+- add db.level and db.profession.
+- form facelift (profession -> select input, phone -> prefix, email -> placeholder, twitter -> prefix, level -> select input, new password -> DELETE).
+- download flow.js for uploading
+- search bar ux improve for mobile device (need more improvement)
+- add breadcrumbs to improve navigation
+
+Monday, 1 September 2014 18:12
+Working on (9)
+

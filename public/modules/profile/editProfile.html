@@ -1,0 +1,120 @@
+<h1 class="page-title col-md-12">
+	<span class="glyphicon glyphicon-calendar"></span>
+	&nbsp;Profile
+</h1>
+<div ncy-breadcrumb></div>
+<div class="changeProfPict-record-box form-box col-md-12">
+	<div class="well">
+		<div class="title-box">
+			<h1>Change Profile Pictrure</h1>
+		</div>
+		<div class="changeProfPict-form form-container row">
+			<div class="column-one col-md-5">
+				<img id="profPictPrev" src="{{user.profpicturl}}"/> 
+			</div>
+			<form ng-submit="uploadImage()" enctype="multiple/form-data">
+				<div class="column-two col-md-7">
+					<div class="browse-box">
+						<label for="profile-browseImage">Browse Image :</label>
+						<div
+						class="btn btn-primary btn-upload"
+						upload-button
+						url="localhost:8000/uploadImage"
+						on-success="console.log(response)"
+						>Upload</div>
+					</div>
+					<button type="submit">Upload</button>
+					<li ng-repeat="file in profPict">{{ file.name }}</li>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="editProfile-record-box form-box col-md-12">
+	<div class="well">
+		<div class="title-box">
+			<h1>Edit Personal Contact</h1>
+		</div>
+		<div class="editProfile-form form-container row">
+			<form>
+				<div class="column-one col-md-6">
+					<div>
+						<label for="profile-phone">Phone</label>
+						<input type="text" name="profile-phone" ng-value="user.contact">
+					</div>
+					<div>
+						<label for="profile-email">Email</label>
+						<input type="text" name="profile-email" ng-value="user.email">
+					</div>
+					<div>
+						<label for="profile-twitter">Twitter</label>
+						<input type="text" name="profile-twitter" ng-value="user.twitter">
+					</div>
+					<div>
+						<label for="profile-facebook">Facebook</label>
+						<input type="text" name="profile-facebook" ng-value="user.facebook">
+					</div>
+				</div>
+				<div class="column-two col-md-6">
+					<div>
+						<label for="profile-oldPassword">Old Password</label>
+						<input type="password" name="profile-oldPassword">
+					</div>
+					<div>
+						<label for="profile-newPassword">New Password</label>
+						<input type="password" name="profile-newPassword">
+					</div>
+					<div>
+						<label for="profile-repeatPassword">Repeat Password</label>
+						<input type="password" name="profile-repeatPassword">
+					</div>
+					<button type="submit">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="award-record-box form-box col-md-12">
+	<div class="well">
+		<div class="title-box">
+			<h1>Add New Awards</h1>
+		</div>
+		<div class="award-form form-container row">
+			<form>
+				<div class="fieldset-item column-one col-md-12">
+					<div>
+						<label for="award-title">Award</label>
+						<input type="text" name="award-title">
+					</div>
+					<div>
+						<label for="award-date">Date</label>
+						<input type="date" name="award-date">
+					</div>
+				</div>
+				<button type="submit">Add</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="award-record-box form-box col-md-12">
+	<div class="well">
+		<div class="title-box">
+			<h1>Edit Awards</h1>
+		</div>
+		<div class="award-form form-container row">
+			<form>
+				<div class="fieldset-item column-one col-md-12" ng-repeat="item in awards">
+					<div>
+						<label for="award-title">Award</label>
+						<input type="text" name="award-title" ng-value="item.title">
+					</div>
+					<div>
+						<label for="award-date">Date</label>
+						<input type="date" name="award-date" ng-value="item.date">
+					</div>
+				</div>
+				<button type="submit">Save</button>
+			</form>
+		</div>
+	</div>
+</div>
